@@ -1,6 +1,10 @@
 docfiles/ 
 *.xlsx
 *.yml
+*.csv
+*.txt
+*.tsv
+*.secret.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
