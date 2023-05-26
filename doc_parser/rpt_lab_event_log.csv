@@ -1,0 +1,11 @@
+﻿TABLE NAME,RPT_LAB_EVENT_LOG,,,
+TABLE DESCRIPTION,"A Key-Value Datastore with metadata, with data for all events related to the CLIA laboratory process",,,
+TABLE META,"owner: ""@adamr""",,,
+TABLE TAGS,hourly,,,
+COLUMN,TYPE,DESCRIPTION,TESTS,META
+purified_plasma_id,TEXT,Unique identifier per plasma sample,not_null,contains_pii: false
+study_id,TEXT,Unique identifier per study,not_null,contains_pii: false
+operation_name,TEXT,Descriptive name of the operation being recorded,not_null,contains_pii: false
+last_updated_dt,TIMESTAMP_NTZ,Timestamp that the event was recorded at,not_null,contains_pii: false
+accessioning_sla_time_violation_flag,NUMBER,A logical flag that indicates if a plasma sample has been in accessioning for longer than 72 hours.,"not_null|accepted_values:\tvalues:[0,1]",contains_pii: false
+current_status_flag,NUMBER,A logical flag that indicates if the current row is the most recent one recorded for a given plasma sample.,"not_null|accepted_values:\tvalues:[0,1]",contains_pii: false
